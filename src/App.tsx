@@ -18,8 +18,10 @@ function App() {
                 endYear={endYear}
                 onChange={handleChange}
             />
-            <PopulationLineChart data={data} />
-            <PopulationPieChart data={data} />
+            <div className="charts">
+                <PopulationLineChart data={data} />
+                <PopulationPieChart data={data} />
+            </div>
         </div>
     );
 }
