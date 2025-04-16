@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
-import { PopulationRecord, fetchPopulationData } from '../api';
+import { PopulationRecord } from '../api';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#A28DD0', '#FF6699', '#FF4444'];
 
-const PopulationPieChart = () => {
-    const [chartData, setChartData] = useState<PopulationRecord[]>([]);
+export type PopulationPieChartProps = {
+    data: PopulationRecord[];
+};
 
-    useEffect(() => {
-        const loadData = async () => {
-            const data = await fetchPopulationData();
-            if (data && data.data) {
-                const sortedData = [...data.data].sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
-                setChartData(sortedData);
-            }
-        };
-        loadData();
-    }, []);
-
+const PopulationPieChart = ({ data }: PopulationPieChartProps) => {
     return (
         <div className="chart-container">
             <h3>Population Distribution</h3>
@@ -26,7 +17,7 @@ const PopulationPieChart = () => {
                 height={350}>
                 <PieChart>
                     <Pie
-                        data={chartData}
+                        data={data}
                         dataKey="Population"
                         nameKey="Year"
                         cx="50%"
@@ -34,7 +25,7 @@ const PopulationPieChart = () => {
                         outerRadius={120}
                         fill="#8884d8"
                         label={({ name, percent }) => `${name} (${(percent * 100).toFixed(1)}%)`}>
-                        {chartData.map((entry, index) => (
+                        {data.map((entry, index) => (
                             <Cell
                                 key={`cell-${index}`}
                                 fill={COLORS[index % COLORS.length]}
