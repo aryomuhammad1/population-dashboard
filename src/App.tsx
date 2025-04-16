@@ -1,5 +1,6 @@
 import React from 'react';
 import PopulationLineChart from './components/PopulationLineChart';
+import PopulationPieChart from './components/PopulationPieChart';
 
 function App() {
     return (
@@ -7,6 +8,7 @@ function App() {
             <h1>Population Dashboard</h1>
             <div className="charts container">
                 <PopulationLineChart />
+                <PopulationPieChart />
             </div>
         </div>
     );
