@@ -1,8 +1,7 @@
 import React from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 import { PopulationRecord } from '../api';
-
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#A28DD0', '#FF6699', '#FF4444'];
+import { COLORS } from '../mocks/colors';
 
 export type PopulationPieChartProps = {
     data: PopulationRecord[];
