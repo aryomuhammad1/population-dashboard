@@ -11,7 +11,7 @@ const PopulationLineChart = ({ data }: PopulationLineChartProps) => {
         <div className="chart-container">
             <h3>Population Over the Years</h3>
             <ResponsiveContainer
-                width="100%"
+                width="90%"
                 height={300}>
                 <LineChart data={data}>
                     <CartesianGrid strokeDasharray="3 3" />
