@@ -6,8 +6,8 @@ export type PopulationRecord = {
 };
 
 export type SourceAnnotation = {
-    name: string;
-    description: string;
+    source_name: string;
+    source_description: string;
 };
 
 export type ApiResponse = {

@@ -20,8 +20,8 @@ const CensusInfo = () => {
 
     return (
         <div className="census-info">
-            <h2>{source.name}</h2>
-            <p>{source.description}</p>
+            <h2>{source.source_name}</h2>
+            <p>{source.source_description}</p>
         </div>
     );
 };
